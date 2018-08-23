@@ -1,0 +1,381 @@
+用法：configure [options]
+选项：[默认为括号内的描述]
+
+帮助选项:
+  --help                            打印此消息
+  --quiet                           抑制显示信息输出
+  --list-decoders                   显示所有可用的解码器
+  --list-encoders                   显示所有可用的编码器
+  --list-hwaccels                   显示所有可用的硬件加速器
+  --list-demuxers                   显示所有可用的分离器
+  --list-muxers                     显示所有可用的复用器
+  --list-parsers                    显示所有可用的解析器
+  --list-protocols                  显示所有可用的协议
+  --list-bsfs                       显示所有可用的位流过滤器
+  --list-indevs                     显示所有可用的输入设备
+  --list-outdevs                    显示所有可用的输出设备
+  --list-filters                    显示所有可用的过滤器
+
+标准选项:
+  --logfile=FILE                    日志测试和输出到FILE [config.log]
+  --disable-logging                 不记录配置调试信息
+  --fatal-warnings                  如果发生任何配置警告，则会失败
+  --prefix=PREFIX                   安装在PREFIX [/usr/local]
+  --bindir=DIR                      在DIR中安装二进制文件[PREFIX/bin]
+  --datadir=DIR                     在DIR中安装数据文件[PREFIX/share/ffmpeg]
+  --docdir=DIR                      在DIR中安装文档[PREFIX/share/doc/ffmpeg]
+  --libdir=DIR                      在DIR中安装lib [PREFIX/lib]
+  --shlibdir=DIR                    在DIR中安装共享库[LIBDIR]
+  --incdir=DIR                      安装包含在DIR中[PREFIX/include]
+  --mandir=DIR                      在DIR中安装手册页[PREFIX/share/man]
+  --pkgconfigdir=DIR                在DIR中安装pkg-config文件[LIBDIR/pkgconfig]
+  --enable-rpath                    使用rpath允许在路径中安装库
+                                    不是动态链接器搜索路径的一部分
+                                    链接程序时使用rpath（使用护照）
+  --install-name-dir=DIR            达尔文安装目标的目录名称
+
+许可选项:
+  --enable-gpl                      允许使用GPL代码，由此产生的libs
+                                    并且二进制文件将被禁用GPL [no]
+  --enable-version3                 升级（L）GPL到版本3 [no]
+  --enable-nonfree                  允许使用非自由代码，由此产生的libs
+                                    二进制文件将不可分配[no]
+
+配置选项:
+  --disable-static                  不建静态库[no]
+  --enable-shared                   构建共享库[no]
+  --enable-small                    优化尺寸而不是速度
+  --disable-runtime-cpudetect       在运行时禁用检测CPU功能（较小的二进制）
+  --enable-gray                     启用全灰度支持（较慢的颜色）
+  --disable-swscale-alpha           在swscale中禁用Alpha通道支持
+  --disable-all                     禁用构建组件，库和程序
+  --enable-raise-major              增加sonames的主版本号[no]
+
+程序选项:
+  --disable-programs                不要建立命令行程序
+  --disable-ffmpeg                  禁用ffmpeg构建
+  --disable-ffplay                  禁用ffplay构建
+  --disable-ffprobe                 禁用ffprobe构建
+  --disable-ffserver                禁用ffserver构建
+
+文档选项:
+  --disable-doc                     不要建立文件
+  --disable-htmlpages               不要建立HTML文档页面
+  --disable-manpages                不要建立人员文档页面
+  --disable-podpages                不要建立POD文档页面
+  --disable-txtpages                不建立文本文档页面
+
+组件选项:
+  --disable-avdevice                禁用libavdevice构建
+  --disable-avcodec                 禁用libavcodec构建
+  --disable-avformat                禁用libavformat构建
+  --disable-swresample              禁用libswresample构建
+  --disable-swscale                 禁用libswscale构建
+  --disable-postproc                禁用libpostproc构建
+  --disable-avfilter                禁用libavfilter构建
+  --enable-avresample               启用libavresample build [no]
+  --disable-pthreads                禁用pthreads [autodetect]
+  --disable-w32threads              禁用Win32线程[autodetect]
+  --disable-os2threads              禁用OS / 2线程[autodetect]
+  --disable-network                 禁用网络支持[no]
+  --disable-dct                     禁用DCT码
+  --disable-dwt                     禁用DWT代码
+  --disable-error-resilience        禁用错误弹性代码
+  --disable-lsp                     禁用LSP代码
+  --disable-lzo                     禁用LZO解码器代码
+  --disable-mdct                    禁用MDCT代码
+  --disable-rdft                    禁用RDFT代码
+  --disable-fft                     禁用FFT代码
+  --disable-faan                    禁用浮点AAN（I）DCT代码
+  --disable-pixelutils              禁用libavutil中的pixel utils
+
+个别组件选项:
+  --disable-everything              禁用下列所有组件
+  --disable-encoder=NAME            禁用编码器NAME
+  --enable-encoder=NAME             启用编码器名称
+  --disable-encoders                禁用所有编码器
+  --disable-decoder=NAME            禁用解码器NAME
+  --enable-decoder=NAME             启用解码器NAME
+  --disable-decoders                禁用所有解码器
+  --disable-hwaccel=NAME            禁用hwaccel NAME
+  --enable-hwaccel=NAME             启用hwaccel NAME
+  --disable-hwaccels                禁用所有hwaccel
+  --disable-muxer=NAME              禁用复制器NAME
+  --enable-muxer=NAME               启用MUXER NAME
+  --disable-muxers                  禁用所有muxers
+  --disable-demuxer=NAME            禁用解分配器NAME
+  --enable-demuxer=NAME             启用分类师NAME
+  --disable-demuxers                禁用所有分离器
+  --enable-parser=NAME              启用解析器NAME
+  --disable-parser=NAME             禁用解析器NAME
+  --disable-parsers                 禁用所有解析器
+  --enable-bsf=NAME                 启用比特流过滤器NAME
+  --disable-bsf=NAME                禁用比特流过滤器NAME
+  --disable-bsfs                    禁用所有位流滤波器
+  --enable-protocol=NAME            启用协议名称
+  --disable-protocol=NAME           禁用协议名称
+  --disable-protocols               禁用所有协议
+  --enable-indev=NAME               启用输入设备名称
+  --disable-indev=NAME              禁用输入设备NAME
+  --disable-indevs                  禁用输入设备
+  --enable-outdev=NAME              启用输出设备NAME
+  --disable-outdev=NAME             禁用输出设备NAME
+  --disable-outdevs                 禁用输出设备
+  --disable-devices                 禁用所有设备
+  --enable-filter=NAME              启用过滤器NAME
+  --disable-filter=NAME             禁用过滤器NAME
+  --disable-filters                 禁用所有过滤器
+
+外部库支持:
+
+   使用以下任何一个开关将允许FFmpeg链接到
+   相应的外部图书馆。 所有组件取决于该库
+   如果满足所有其他依赖关系，而不是它们将被启用
+   明确禁用。 例如。 --enable-libwavpack将启用链接
+   libwavpack并允许构建libwavpack编码器，除非它是
+   特别禁用--disable-encoder = libwavpack。
+
+   请注意，只有系统库自动检测。 所有其他外部
+   必须明确启用库。
+
+   另请注意，以下帮助文本描述了库的用途
+   自己，并不是所有的功能都必须由FFmpeg使用。
+
+  --enable-avisynth                 启用阅读AviSynth脚本文件[no]
+  --disable-bzlib                   禁用bzlib [autodetect]
+  --enable-chromaprint              使用chromaprint启用音频指纹[no]
+  --enable-frei0r                   启用frei0r视频过滤[no]
+  --enable-gcrypt                   启用gcrypt，需要rtmp（t）e支持
+                                    如果openssl，librtmp或gmp不被使用[no]
+  --enable-gmp                      启用rtmp（t）e支持所需的gmp
+                                    如果openssl或librtmp不被使用[no]
+  --enable-gnutls                   启用支持https的gnutls
+                                    如果openssl未使用[no]
+  --disable-iconv                   禁用iconv [autodetect]
+  --enable-jni                      启用JNI支持[no]
+  --enable-ladspa                   启用LADSPA音频过滤[no]
+  --enable-libass                   启用libass字幕渲染，
+                                    字幕和屁股过滤需要[no]
+  --enable-libbluray                启用使用libbluray的BluRay阅读[no]
+  --enable-libbs2b                  启用bs2b DSP库[no]
+  --enable-libcaca                  启用文本显示使用libcaca [no]
+  --enable-libcelt                  通过libcelt启用CELT解码[no]
+  --enable-libcdio                  使用libcdio启用音频CD抓取[no]
+  --enable-libdc1394                启用IIDC-1394使用libdc1394抓取
+                                    和图书馆1394 [不]
+  --enable-libfdk-aac               通过libfdk-aac启用AAC de/encoding [no]
+  --enable-libflite                 通过libflite支持flite（语音合成）支持[no]
+  --enable-libfontconfig            启用libfontconfig，对drawtext filter有用[no]
+  --enable-libfreetype              启用libfreetype，需要drawtext filter [no]
+  --enable-libfribidi               启用libfribidi，改进drawtext filter [no]
+  --enable-libgme                   通过libgme启用游戏音乐Emu [no]
+  --enable-libgsm                   通过libgsm启用GSM de /编码[no]
+  --enable-libiec61883              启用iec61883 via libiec61883 [no]
+  --enable-libilbc                  启用iLBC de /编码通过libilbc [no]
+  --enable-libkvazaar               通过libkvazaar启用HEVC编码[no]
+  --enable-libmodplug               通过libmodplug启用ModPlug [no]
+  --enable-libmp3lame               通过libmp3lame启用MP3编码[no]
+  --enable-libnut                   通过libnut启用NUT（de）muxing，
+                                    native（de）muxer exists [no]
+  --enable-libopencore-amrnb        通过libopencore-amrnb启用AMR-NB de /编码[no]
+  --enable-libopencore-amrwb        通过libopencore-amrwb启用AMR-WB解码[no]
+  --enable-libopencv                通过libopencv启用视频过滤[no]
+  --enable-libopenh264              通过OpenH264启用H.264编码[no]
+  --enable-libopenjpeg              通过OpenJPEG启用JPEG 2000 de /编码[no]
+  --enable-libopenmpt               启用通过libopenmpt解码跟踪的文件[no]
+  --enable-libopus                  通过libopus启用Opus de /编码[no]
+  --enable-libpulse                 通过libpulse启用Pulseaudio输入[no]
+  --enable-librubberband            使橡胶带过滤器需要橡胶带[no]
+  --enable-librtmp                  通过librtmp启用RTMP [E]支持[no]
+  --enable-libschroedinger          通过libschroedinger启用Dirac de/encoding
+  --enable-libshine                 通过libshine启用定点MP3编码[no]
+  --enable-libsmbclient             启用S​​amba协议通过libsmbclient [no]
+  --enable-libsnappy                启用S​​nappy压缩，需要hap编码[no]
+  --enable-libsoxr                  启用包含libsoxr重新采样[no]
+  --enable-libspeex                 通过libspeex启用Speex de /编码[no]
+  --enable-libssh                   通过libssh启用SFTP协议[no]
+  --enable-libtesseract             启用Tesseract，ocr过滤器需要[no]
+  --enable-libtheora                通过libtheora启用Theora编码[no]
+  --enable-libtwolame               通过libtwolame启用MP2编码[no]
+  --enable-libv4l2                  启用libv4l2/v4l-utils [no]
+  --enable-libvidstab               使用vid.stab启用视频稳定[no]
+  --enable-libvo-amrwbenc           通过libvo-amrwbenc启用AMR-WB编码[no]
+  --enable-libvorbis                启用Vorbis en /解码通过libvorbis，
+                                    本地实现存在[no]
+  --enable-libvpx                   通过libvpx启用VP8和VP9 de/encoding [no]
+  --enable-libwavpack               通过libwavpack启用wavpack编码[no]
+  --enable-libwebp                  通过libwebp启用WebP编码[no]
+  --enable-libx264                  通过x264启用H.264编码[no]
+  --enable-libx265                  通过x265启用HEVC编码[no]
+  --enable-libxavs                  通过xavs启用AVS编码[no]
+  --enable-libxcb                   启用X11抓取使用XCB [autodetect]
+  --enable-libxcb-shm               启用X11抓取shm通讯[autodetect]
+  --enable-libxcb-xfixes            启用X11抓取鼠标渲染[autodetect]
+  --enable-libxcb-shape             启用X11抓取形状渲染[autodetect]
+  --enable-libxvid                  通过xvidcore启用Xvid编码，
+                                    本机MPEG-4/Xvid编码器存在[no]
+  --enable-libzimg                  启用z.lib，zscale filter需要[no]
+  --enable-libzmq                   启用通过libzmq的消息传递[no]
+  --enable-libzvbi                  通过libzvbi启用图文电视支持[no]
+  --disable-lzma                    禁用lzma [autodetect]
+  --enable-decklink                 启用Blackmagic DeckLink I/O支持[no]
+  --enable-mediacodec               启用Android MediaCodec支持[no]
+  --enable-netcdf                   启用NetCDF，需要sofalizer过滤器[no]
+  --enable-openal                   启用OpenAL 1.1捕获支持[no]
+  --enable-opencl                   启用OpenCL代码
+  --enable-opengl                   启用OpenGL渲染[no]
+  --enable-openssl                  启用openssl，这是https支持所需的
+                                    如果不使用gnutls [no]
+  --disable-schannel                禁用支持TLS的SChannel SSP
+                                    Windows如果没有使用openssl和gnutls [autodetect]
+  --disable-sdl2                    禁用sdl2 [autodetect]
+  --disable-securetransport         禁用TLS支持所需的安全传输
+                                    在OSX上，如果openssl和gnutls不被使用[autodetect]
+  --disable-xlib                    禁用xlib [autodetect]
+  --disable-zlib                    禁用zlib [autodetect]
+
+以下库提供各种硬件加速功能:
+  --disable-audiotoolbox            禁用Apple AudioToolbox代码[autodetect]
+  --disable-cuda                    禁用动态链接的Nvidia CUDA代码[autodetect]
+  --disable-cuvid                   禁用Nvidia CUVID支持[autodetect]
+  --disable-d3d11va                 禁用Microsoft Direct3D 11视频加速代码[autodetect]
+  --disable-dxva2                   禁用Microsoft DirectX 9视频加速代码[autodetect]
+  --enable-libmfx                   通过libmfx启用Intel MediaSDK（AKA Quick Sync Video）代码[no]
+  --enable-libnpp                   启用基于Nvidia Performance Primitives的代码[no]
+  --enable-mmal                     通过MMAL启用Broadcom多媒体抽象层（Raspberry Pi）[no]
+  --disable-nvenc                   禁用Nvidia视频编码代码[autodetect]
+  --enable-omx                      启用OpenMAX IL代码[no]
+  --enable-omx-rpi                  启用OpenMAX IL代码为Raspberry Pi [no]
+  --disable-vaapi                   禁用视频加速API（主要是Unix / Intel）代码[autodetect]
+  --disable-vda                     禁用Apple视频解码加速代码[autodetect]
+  --disable-vdpau                   禁用Nvidia视频解码和演示API for Unix代码[autodetect]
+  --disable-videotoolbox            禁用VideoToolbox代码[autodetect]
+
+工具链选项:
+  --arch=ARCH                       选择架构[]
+  --cpu=CPU                         选择所需的最小CPU（影响
+                                    指令选择，可能会在较旧的CPU上崩溃）
+  --cross-prefix=PREFIX             使用PREFIX编译工具[]
+  --progs-suffix=SUFFIX             程序名称后缀[]
+  --enable-cross-compile            假设使用交叉编译器
+  --sysroot=PATH                    交叉树的根
+  --sysinclude=PATH                 交叉构建系统头的位置
+  --target-os=OS                    编译器目标OS []
+  --target-exec=CMD                 命令在目标上运行可执行文件
+  --target-path=DIR                 在目标上查看构建目录的路径
+  --target-samples=DIR              目标路径到samples目录
+  --tempprefix=PATH                 强制固定目录/前缀而不是mktemp进行检查
+  --toolchain=NAME                  根据NAME设置工具默认值
+  --nm=NM                           使用nm工具NM [nm -g]
+  --ar=AR                           使用归档工具AR [ar]
+  --as=AS                           使用汇编程序AS []
+  --ln_s=LN_S                       使用符号链接工具LN_S [ln -s -f]
+  --strip=STRIP                     使用条带工具STRIP [strip]
+  --windres=WINDRES                 使用Windows资源编译器WINDRES [windres]
+  --yasmexe=EXE                     使用yasm兼容的汇编程序EXE [yasm]
+  --cc=CC                           使用C编译器CC [gcc]
+  --cxx=CXX                         使用C编译器CXX [g ++]
+  --objcc=OCC                       使用ObjC编译器OCC [gcc]
+  --dep-cc=DEPCC                    使用依赖生成器DEPCC [gcc]
+  --ld=LD                           使用链接器LD []
+  --pkg-config=PKGCONFIG            使用pkg-config工具PKGCONFIG [pkg-config]
+  --pkg-config-flags=FLAGS          传递附加标志到pkgconf []
+  --ranlib=RANLIB                   使用ranlib RANLIB [ranlib]
+  --doxygen=DOXYGEN                 使用DOXYGEN生成API doc [doxygen]
+  --host-cc=HOSTCC                  使用主机C编译器HOSTCC
+  --host-cflags=HCFLAGS             在编译主机时使用HCFLAGS
+  --host-cppflags=HCPPFLAGS         在主机编译时使用HCPPFLAGS
+  --host-ld=HOSTLD                  使用主机连接器HOSTLD
+  --host-ldflags=HLDFLAGS           链接主机时使用HLDFLAGS
+  --host-libs=HLIBS                 当链接主机时使用libs HLIBS
+  --host-os=OS                      编译主机OS []
+  --extra-cflags=ECFLAGS            将ECFLAGS添加到CFLAGS []
+  --extra-cxxflags=ECFLAGS          将ECFLAGS添加到CXXFLAGS []
+  --extra-objcflags=FLAGS           将FLAGS添加到OBJCFLAGS []
+  --extra-ldflags=ELDFLAGS          将ELDFLAGS添加到LDFLAGS []
+  --extra-ldexeflags=ELDFLAGS       将ELDFLAGS添加到LDEXEFLAGS []
+  --extra-ldlibflags=ELDFLAGS       将ELDFLAGS添加到LDLIBFLAGS []
+  --extra-libs=ELIBS                添加ELIBS []
+  --extra-version=STRING            版本字符串后缀[]
+  --optflags=OPTFLAGS               覆盖与优化相关的编译器标志
+  --build-suffix=SUFFIX             图书馆名称后缀[]
+  --enable-pic                      构建位置无关代码
+  --enable-thumb                    为Thumb指令集编译
+  --enable-lto                      使用链接时间优化
+  --env="ENV=override"              覆盖环境变量
+
+高级选项（仅限专家）:
+  --malloc-prefix=PREFIX            使用PREFIX前缀malloc和相关名称
+  --custom-allocator=NAME           使用支持的自定义分配器
+  --disable-symver                  禁用符号版本控制
+  --enable-hardcoded-tables         使用硬编码的表而不是运行时生成
+  --disable-safe-bitstream-reader   禁用缓冲区边界检查在bitreaders
+                                    （更快，但可能会崩溃）
+  --sws-max-filter-size=N           最大过滤器尺寸swscale使用[256]
+
+优化选项（仅限专家）:
+  --disable-asm                     禁用所有程序集优化
+  --disable-altivec                 禁用AltiVec优化
+  --disable-vsx                     禁用VSX优化
+  --disable-power8                  禁用POWER8优化
+  --disable-amd3dnow                禁用3DNow！优化
+  --disable-amd3dnowext             禁用3DNow！ 扩展优化
+  --disable-mmx                     禁用MMX优化
+  --disable-mmxext                  禁用MMXEXT优化
+  --disable-sse                     禁用SSE优化
+  --disable-sse2                    禁用SSE2优化
+  --disable-sse3                    禁用SSE3优化
+  --disable-ssse3                   禁用SSSE3优化
+  --disable-sse4                    禁用SSE4优化
+  --disable-sse42                   禁用SSE4.2优化
+  --disable-avx                     禁用AVX优化
+  --disable-xop                     禁用XOP优化
+  --disable-fma3                    禁用FMA3优化
+  --disable-fma4                    禁用FMA4优化
+  --disable-avx2                    禁用AVX2优化
+  --disable-aesni                   禁用AESNI优化
+  --disable-armv5te                 禁用armv5te优化
+  --disable-armv6                   禁用armv6优化
+  --disable-armv6t2                 禁用armv6t2优化
+  --disable-vfp                     禁用VFP优化
+  --disable-neon                    禁用NEON优化
+  --disable-inline-asm              禁用使用内联汇编
+  --disable-yasm                    禁用使用nasm / yasm程序集
+  --disable-mipsdsp                 禁用MIPS DSP ASE R1优化
+  --disable-mipsdspr2               禁用MIPS DSP ASE R2优化
+  --disable-msa                     禁用MSA优化
+  --disable-mipsfpu                 禁用浮点MIPS优化
+  --disable-mmi                     禁用龙芯SIMD优化
+  --disable-fast-unaligned          考虑不对齐访问速度慢
+
+开发人员选项（在FFmpeg本身工作时很有用）:
+  --disable-debug                   禁用调试符号
+  --enable-debug=LEVEL              设置调试级别[]
+  --disable-optimizations           禁用编译器优化
+  --enable-extra-warnings           启用更多的编译器警告
+  --disable-stripping               禁止剥离可执行文件和共享库
+  --assert-level=level              0（默认），1或2，断言测试量，
+                                    2导致运行时减速。
+  --enable-memory-poisoning         使用任意数据填充堆未初始化的分配空间
+  --valgrind=VALGRIND               通过valgrind运行“命运”测试来检测内存
+                                    泄漏和错误，使用指定的valgrind二进制文件。
+                                    不能与--target-exec组合
+  --enable-ftrapv                   陷阱算术溢出
+  --samples=PATH                    FATE测试样品的位置，如果不设置使用
+                                    $ FATE_SAMPLES在make调用时间。
+  --enable-neon-clobber-test        检查NEON寄存器以进行检修（应该是
+                                    仅用于调试目的）
+  --enable-xmm-clobber-test         检查XMM注册表以进行复制（仅限Win64）;
+                                    应仅用于调试目的）
+  --enable-random                   随机启用/禁用组件
+  --disable-random
+  --enable-random=LIST              随机启用/禁用特定组件或
+  --disable-random=LIST             组件组。 LIST是一个逗号分隔的列表
+                                    的NAME [：PROB]条目，其中NAME是组件
+                                    （组）和PROB相关联的概率
+                                    NAME（默认为0.5）。
+  --random-seed=VALUE               种子值为--enable / disable-random
+  --disable-valgrind-backtrace      不要在Valgrind下打印一个回溯
+                                    （仅适用于 - 可禁用优化构建）
+
+注意：对象文件是在启动配置的位置构建的。
