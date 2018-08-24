@@ -1,4 +1,4 @@
-package com.liux.ffmpeg;
+package com.liux.ffmpeg.demo;
 
 import org.junit.Test;
 
