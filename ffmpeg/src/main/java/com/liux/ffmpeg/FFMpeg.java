@@ -7,7 +7,7 @@ package com.liux.ffmpeg;
 public class FFMpeg {
 
     static {
-        System.loadLibrary("android_ffmpeg");
+        System.loadLibrary("native");
     }
 
     public static native String getVersion();

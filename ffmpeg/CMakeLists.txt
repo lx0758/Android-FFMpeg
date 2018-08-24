@@ -7,26 +7,38 @@ cmake_minimum_required(VERSION 3.4.1)
 include_directories( src/main/cpp/include )
 
 # 第二步:引入FFmpeg
-add_library( ffmpeg
-             SHARED
-             IMPORTED )
-set_target_properties( ffmpeg
-                       PROPERTIES IMPORTED_LOCATION
-                       ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libffmpeg.so )
+# 声明库类
+add_library(
+    ffmpeg
+    SHARED
+    IMPORTED
+)
+# 设置库类属性
+set_target_properties(
+    ffmpeg
+    PROPERTIES IMPORTED_LOCATION
+    ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libffmpeg.so
+)
 
 # 第三步:引入原生代码
-add_library( android_ffmpeg
-             SHARED
-             src/main/cpp/com_liux_ffmpeg_FFMPEG.cpp )
+add_library(
+    native
+    SHARED
 
-# 第四步:添加系统日志库
-find_library( log-lib
-              log )
+    # 源码相对路径
+    src/main/cpp/com_liux_ffmpeg_FFMpeg.cpp
+    src/main/cpp/com_liux_ffmpeg_JNIThread.cpp
+)
 
-# 第五步:连接库文件
+# 第四步:连接库文件
 # 警告!!!注意连接顺序
-target_link_libraries( android_ffmpeg
+target_link_libraries(
+    # 代码编译库
+    native
 
-                       ffmpeg
+    # 依赖原生库
+    ffmpeg
 
-                       ${log-lib} )
+    # 系统自带库
+    log
+)
