@@ -22,6 +22,7 @@
 #include <pthread.h>
 #include "android_log.h"
 
+// std 是命名空间,类似 java 中的包名
 // using namespace std;
 
 int count = 0;
@@ -41,7 +42,7 @@ void popQueue();
  * @param data
  * @return
  */
-void * runProducerCallback(void *data) {
+void *runProducerCallback(void *data) {
     while (count < 50) {
         pushQueue(5);
         pthread_cond_signal(&cond_t);
@@ -74,7 +75,7 @@ void pushQueue(int size) {
  * @param data
  * @return
  */
-void * runConsumerCallback(void *data) {
+void *runConsumerCallback(void *data) {
     while (true) {
         pthread_mutex_lock(&mutex_t);
         if (queue.empty()) {
@@ -98,6 +99,7 @@ void * runConsumerCallback(void *data) {
  */
 void popQueue() {
     while (!queue.empty()) {
+        usleep(50 * 1000);
         int value = queue.front();queue.pop();
         LOGD("[thread]:queue front %d", value);
     }

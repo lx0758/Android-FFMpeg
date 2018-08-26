@@ -28,6 +28,7 @@ add_library(
     # 源码相对路径
     src/main/cpp/com_liux_ffmpeg_FFMpeg.cpp
     src/main/cpp/com_liux_ffmpeg_JNIThread.cpp
+    src/main/cpp/com_liux_ffmpeg_NativeCallJava.cpp
 )
 
 # 第四步:连接库文件
