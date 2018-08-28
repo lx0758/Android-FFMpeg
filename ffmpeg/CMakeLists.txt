@@ -22,20 +22,27 @@ set_target_properties(
 
 # 第三步:引入原生代码
 add_library(
-    native
+    base
     SHARED
 
     # 源码相对路径
-    src/main/cpp/com_liux_ffmpeg_FFMpeg.cpp
-    src/main/cpp/com_liux_ffmpeg_JNIThread.cpp
-    src/main/cpp/com_liux_ffmpeg_NativeCallJava.cpp
+    src/main/cpp/base/FFMpeg.cpp
+    src/main/cpp/base/JNIThread.cpp
+    src/main/cpp/base/NativeCallJava.cpp
+)
+add_library(
+    media
+    SHARED
+
+    src/main/cpp/media/MediaPlayer.cpp
 )
 
 # 第四步:连接库文件
 # 警告!!!注意连接顺序
 target_link_libraries(
     # 代码编译库
-    native
+    base
+    media
 
     # 依赖原生库
     ffmpeg

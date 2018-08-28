@@ -1,4 +1,4 @@
-package com.liux.ffmpeg;
+package com.liux.ffmpeg.base;
 
 /**
  * Created by Liux on 2017/7/1.
@@ -7,7 +7,7 @@ package com.liux.ffmpeg;
 public class FFMpeg {
 
     static {
-        System.loadLibrary("native");
+        System.loadLibrary("base");
     }
 
     public static native String getVersion();

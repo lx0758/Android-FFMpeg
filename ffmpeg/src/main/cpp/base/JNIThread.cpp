@@ -107,7 +107,7 @@ void popQueue() {
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_liux_ffmpeg_JNIThread_runThread(JNIEnv *env, jclass type) {
+Java_com_liux_ffmpeg_base_JNIThread_runThread(JNIEnv *env, jclass type) {
 
     pthread_create(&producer_t, NULL, runProducerCallback, NULL);
     pthread_create(&consumer_t, NULL, runConsumerCallback, NULL);

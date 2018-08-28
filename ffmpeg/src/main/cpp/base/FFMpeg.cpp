@@ -9,7 +9,7 @@ extern "C" {
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_liux_ffmpeg_FFMpeg_getVersion(JNIEnv *env, jclass type) {
+Java_com_liux_ffmpeg_base_FFMpeg_getVersion(JNIEnv *env, jclass type) {
     std::string version = FFMPEG_VERSION;
     version += '\n';
     version += avcodec_configuration();

@@ -1,9 +1,9 @@
-package com.liux.ffmpeg;
+package com.liux.ffmpeg.base;
 
 public class NativeCallJava {
 
     static {
-        System.loadLibrary("native");
+        System.loadLibrary("base");
     }
 
     private Callback callback;

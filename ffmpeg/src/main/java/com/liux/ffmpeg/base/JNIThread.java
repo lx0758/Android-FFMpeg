@@ -1,9 +1,9 @@
-package com.liux.ffmpeg;
+package com.liux.ffmpeg.base;
 
 public class JNIThread {
 
     static {
-        System.loadLibrary("native");
+        System.loadLibrary("base");
     }
 
     public static native void runThread();
