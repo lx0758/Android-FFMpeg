@@ -3,8 +3,8 @@
 #include "android_log.h"
 
 extern "C" {
-    #include <libavutil/ffversion.h>
-    #include <libavcodec/avcodec.h>
+#include <libavutil/ffversion.h>
+#include <libavcodec/avcodec.h>
 }
 
 extern "C"

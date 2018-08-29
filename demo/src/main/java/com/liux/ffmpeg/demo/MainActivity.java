@@ -2,6 +2,7 @@ package com.liux.ffmpeg.demo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -53,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void onPlayAudio(View view) {
         String uriText = audioText.getText().toString();
+        if (TextUtils.isEmpty(uriText)) {
+            Toast.makeText(this, "源资源不能为空", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         mediaPlayer.setDataSource(uriText);
         mediaPlayer.setOnPreparedListener(mp -> {
