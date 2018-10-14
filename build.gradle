@@ -1,18 +1,15 @@
 buildscript {
     repositories {
-        flatDir {
-            dirs '../aarlibs'
-        }
-        maven {
-            url 'http://maven.6xyun.cn/'
-        }
+        flatDir { dirs '../aarlibs' }
+        maven { url 'http://maven.aliyun.com/repository/public/' }
+        maven { url 'http://maven.6xyun.cn/' }
         //google()
         //jcenter()
         //mavenLocal()
         //mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath 'com.android.tools.build:gradle:3.2.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -21,12 +18,9 @@ buildscript {
 
 allprojects{
     repositories {
-        flatDir {
-            dirs '../aarlibs'
-        }
-        maven {
-            url 'http://maven.6xyun.cn/'
-        }
+        flatDir { dirs '../aarlibs' }
+        maven { url 'http://maven.aliyun.com/repository/public/' }
+        maven { url 'http://maven.6xyun.cn/' }
         //google()
         //jcenter()
         //mavenLocal()
