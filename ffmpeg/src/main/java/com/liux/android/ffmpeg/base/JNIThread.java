@@ -1,4 +1,4 @@
-package com.liux.ffmpeg.base;
+package com.liux.android.ffmpeg.base;
 
 public class JNIThread {
 

@@ -1,4 +1,4 @@
-package com.liux.ffmpeg.demo;
+package com.liux.android.ffmpeg.demo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.liux.ffmpeg.demo", appContext.getPackageName());
+        assertEquals("com.liux.android.ffmpeg.demo", appContext.getPackageName());
     }
 }

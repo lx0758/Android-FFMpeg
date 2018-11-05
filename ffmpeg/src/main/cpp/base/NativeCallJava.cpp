@@ -52,7 +52,7 @@ jstring *callMethod(JNIEnv *env, jobject instance, int code, char *msg) {
  */
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_liux_ffmpeg_base_NativeCallJava_callJavaOnMainThread(JNIEnv *env, jobject instance, jstring data) {
+Java_com_liux_android_ffmpeg_base_NativeCallJava_callJavaOnMainThread(JNIEnv *env, jobject instance, jstring data) {
     LOGD("[call]:native main thread call java method");
     variable = data;
     jstring *result = callMethod(env, instance, 100, "msg from native main thread");
@@ -84,7 +84,7 @@ void *callMethodChild(void *data) {
  */
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_liux_ffmpeg_base_NativeCallJava_callJavaOnChildThread(JNIEnv *env, jobject instance, jstring data) {
+Java_com_liux_android_ffmpeg_base_NativeCallJava_callJavaOnChildThread(JNIEnv *env, jobject instance, jstring data) {
     variable = data;
     // 新建一个可以全局引用的对象
     instance = env->NewGlobalRef(instance);

@@ -1,4 +1,4 @@
-package com.liux.ffmpeg.demo;
+package com.liux.android.ffmpeg.demo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.liux.ffmpeg.base.FFMpeg;
-import com.liux.ffmpeg.base.JNIThread;
-import com.liux.ffmpeg.media.MediaPlayer;
-import com.liux.ffmpeg.base.NativeCallJava;
+import com.liux.android.ffmpeg.base.FFMpeg;
+import com.liux.android.ffmpeg.base.JNIThread;
+import com.liux.android.ffmpeg.media.MediaPlayer;
+import com.liux.android.ffmpeg.base.NativeCallJava;
 
 public class MainActivity extends AppCompatActivity {
 

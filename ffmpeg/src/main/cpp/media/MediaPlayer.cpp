@@ -24,7 +24,7 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_liux_ffmpeg_media_MediaPlayer_n_1setDataSource(JNIEnv *env, jobject instance,
+Java_com_liux_android_ffmpeg_media_MediaPlayer_n_1setDataSource(JNIEnv *env, jobject instance,
                                                   jstring dataSource_) {
     const char *dataSource = env->GetStringUTFChars(dataSource_, 0);
     url = dataSource;
@@ -33,7 +33,7 @@ Java_com_liux_ffmpeg_media_MediaPlayer_n_1setDataSource(JNIEnv *env, jobject ins
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_liux_ffmpeg_media_MediaPlayer_n_1prepare(JNIEnv *env, jobject instance) {
+Java_com_liux_android_ffmpeg_media_MediaPlayer_n_1prepare(JNIEnv *env, jobject instance) {
     av_register_all();
     avformat_network_init();
 
@@ -107,6 +107,6 @@ Java_com_liux_ffmpeg_media_MediaPlayer_n_1prepare(JNIEnv *env, jobject instance)
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_liux_ffmpeg_media_MediaPlayer_n_1prepareAsync(JNIEnv *env, jobject instance) {
+Java_com_liux_android_ffmpeg_media_MediaPlayer_n_1prepareAsync(JNIEnv *env, jobject instance) {
     pthread_create(&decode, NULL, &callbackPrepare, instance);
 }

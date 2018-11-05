@@ -1,4 +1,4 @@
-package com.liux.ffmpeg.media;
+package com.liux.android.ffmpeg.media;
 
 public class MediaPlayer {
 

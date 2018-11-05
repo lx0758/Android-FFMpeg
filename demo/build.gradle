@@ -4,7 +4,7 @@ android {
     compileSdkVersion COMPILE_SDK_VERSION as int
     buildToolsVersion BUILD_TOOLS_VERSION as String
     defaultConfig {
-        applicationId "com.liux.ffmpeg.demo"
+        applicationId "com.liux.android.ffmpeg.demo"
         minSdkVersion MIN_SDK_VERSION as int
         targetSdkVersion TARGET_SDK_VERSION as int
         versionCode 1_00_00

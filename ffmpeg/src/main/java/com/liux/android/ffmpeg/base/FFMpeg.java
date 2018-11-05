@@ -1,4 +1,4 @@
-package com.liux.ffmpeg.base;
+package com.liux.android.ffmpeg.base;
 
 /**
  * Created by Liux on 2017/7/1.

@@ -1,4 +1,4 @@
-package com.liux.ffmpeg;
+package com.liux.android.ffmpeg.demo;
 
 import org.junit.Test;
 
