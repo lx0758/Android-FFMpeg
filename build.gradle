@@ -1,7 +1,10 @@
 buildscript {
     repositories {
         flatDir { dirs rootProject.projectDir.getAbsolutePath() + File.separator + 'aarlibs' }
-        maven { url 'http://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/' }
         maven { url 'http://maven.6xyun.cn/' }
         //google()
         //jcenter()
@@ -19,7 +22,10 @@ buildscript {
 allprojects{
     repositories {
         flatDir { dirs rootProject.projectDir.getAbsolutePath() + File.separator + 'aarlibs' }
-        maven { url 'http://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/' }
         maven { url 'http://maven.6xyun.cn/' }
         //google()
         //jcenter()
